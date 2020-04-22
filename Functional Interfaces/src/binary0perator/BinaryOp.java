@@ -31,6 +31,10 @@ public class BinaryOp {
         
         Comparator<Developer> comparing = Comparator.comparing(Developer::getSalary);
         BinaryOperator<Developer> bo = BinaryOperator.maxBy(comparing);
+        BinaryOperator<Developer> bo2 = (devv1,devv2)->{
+        	return new Developer(devv1.getName()+","+devv2.getName(), devv1.salary.add(devv2.getSalary()));
+        };
+        System.out.println(bo2.apply(dev1, dev2));
         System.out.println(list.stream().max(comparing));
         System.out.println(list.stream().reduce(bo));
 	}

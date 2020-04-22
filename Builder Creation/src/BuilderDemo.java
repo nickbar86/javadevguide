@@ -11,5 +11,13 @@ public class BuilderDemo {
 
 		CDType cdType2 = cdBuilder.buildSamsungCD();
 		cdType2.showItems();
+		
+		BankAccount account =new BankAccount.Builder(1234L)
+				.withOwner("me")
+				.atBranch("my branch")
+				.atRate(10)
+				.openingBalance(220)
+				.build();
+		System.out.println(account);
 	}
 }

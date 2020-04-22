@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 /*
  * The Java Predicate interface, java.util.function.Predicate, represents a simple function that takes a single value as parameter, and returns true or false. 
@@ -38,7 +39,7 @@ public class Pred {
 		Hosting h2 = new Hosting(2, "linode", "linode.com");
 		Hosting h3 = new Hosting(3, "liquidweb", "liquidweb.com");
 		Hosting h4 = new Hosting(4, "google", "google.com");
-		Hosting h5 = new Hosting(2, "linode", "linode.com");
+		Hosting h5 = new Hosting(5, "linode", "linode.com");
 
 		List<Hosting> listHosting = Arrays.asList(h1, h2, h3, h4, h5);
 		Predicate<Hosting> isPredicateHosting = host -> host.getName().equals("linode");
@@ -54,7 +55,6 @@ public class Pred {
 		  //  {1=linode.com}
         Map<Integer, String> filteredMap = filterByValue(HOSTING, x -> x.contains("linode"));
         System.out.println(filteredMap);
-        
         Map<Integer, Integer> numbers = new HashMap<>();
         numbers.put(1, 11);
         numbers.put(2, 12);
